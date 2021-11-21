@@ -1,5 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import { PostCard, PostWidget, Categories } from "../components";
+import styles from '../styles/Home.module.scss'
 
 const posts = [
     {title: 'Test', excerpt: 'Test'},
@@ -15,17 +16,15 @@ export default function Home() {
       </Head>
       <div className={styles.content}>
           <div className={styles.post_info}>
-              {posts.map((post, index) => (
-                  <div>
-                      {post.title}
-                      {post.excerpt}
-                  </div>
+              {posts.map((post) => (
+                  <PostCard post={post} key={post.title}/>
               ))}
           </div>
 
           <div className={styles.post}>
             <div className={styles.post_1}>
-
+                  <PostWidget/>
+                <Categories/>
             </div>
           </div>
       </div>
