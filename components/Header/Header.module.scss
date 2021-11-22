@@ -1,0 +1,46 @@
+.container{
+  margin: 0 auto 2rem auto;
+  padding: 0 2.5rem;
+  div{
+    border-bottom: 1px;
+    width: 100%;
+    display: inline-block;
+    border-color: rgb(156, 163, 175);
+    padding: 2rem 0;
+    div{
+      display: block;
+        span {
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 2.25rem;
+          line-height: 2.5rem;
+          color: #000;
+      }
+    }
+    .category{
+      display: none;
+      span{
+        margin-top: .5rem;
+        vertical-align: middle;
+        color: #000;
+        margin-left: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .container div div{
+    float: left;
+
+    .category{
+      display: contents;
+      float: left;
+      span{
+        float: right;
+      }
+    }
+  }
+}
