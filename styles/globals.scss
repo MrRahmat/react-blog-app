@@ -31,10 +31,12 @@ html {
 }
 
 head {
+  z-index: -2;
   display: block;
   font-size: 120px;
   color: transparent;
   &:before, &:after{
+    z-index: -2;
     position: fixed;
     top: 50%;
     left: 50%;
