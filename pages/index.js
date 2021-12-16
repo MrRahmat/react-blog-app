@@ -1,12 +1,9 @@
 import Head from 'next/head';
 import {PostCard, PostWidget, Categories} from "../components";
-import styles from '../styles/Home.module.scss'
+import styles from '../styles/Home.module.scss';
+import { getPosts } from '../services';
 
-const posts = [
-    {title: 'Test', excerpt: 'Test'},
-    {title: 'Test2', excerpt: 'Test2'}
-]
-export default function Home() {
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +25,16 @@ export default function Home() {
             </div>
           </div>
       </div>
-
     </div>
   )
+}
+
+export async function getStaticProps(params) {
+  const posts = (await getPosts()) || [];
+  
+  return {
+    props: {
+      posts
+    }
+  }
 }
