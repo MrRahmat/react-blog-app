@@ -14,7 +14,7 @@ export default function Home({ posts }) {
       <div className={styles.content}>
           <div className={styles.post_info}>
               {posts.map((post) => (
-                  <PostCard post={post} key={post.title}/>
+                  <PostCard post={post.node} key={post.node.title}/>
               ))}
           </div>
 
