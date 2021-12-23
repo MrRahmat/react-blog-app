@@ -1,11 +1,11 @@
-.wrapper{
-  background-color: #fff;
+.post{
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   border-radius: 0.5rem;
   padding: 0;
   padding-bottom: 3rem;
   margin-bottom: 2rem;
-  .img_container{
+  .post_img{
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -34,15 +34,90 @@
       color: #a55353;
     }
   }
+  .post_info{
+    display: block;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    .post_date{
+      vertical-align: middle;
+      color: #585050;
+      font-size: 1rem;
+      svg{
+        height: 1.5rem;
+        width: 1.5rem;
+        margin-right: 0.5rem;
+        display: inline;
+        color: #a55353;
+      }
+    }
+    >div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+      width: 100%;
+      margin-right: 2rem;
+      img{
+        vertical-align: middle;
+        border-radius: 100%;
+      }
+      p{
+        display: inline;
+        vertical-align: middle;
+        color: #585050;
+        margin-left: .5rem;
+        font-size: 1rem;
+      }
+    }
+  }
+  >p{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    color: #585050;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+  .post_link{
+    text-align: center;
+    span{
+      display: inline-block;
+      background-color: #a55353;
+      color: #fff;
+      font-size: 1rem;
+      padding: 1rem 2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: transform 500ms;
+      &:hover{
+        transform: translateY(-0.25rem);
+      }
+    }
+  }
 }
 
 @media (min-width: 1440px){
-  .wrapper{
+  .post{
     //padding: 2rem;
-    >div {
+    .post_img {
       img {
         border-radius: 0.5rem;
       }
+    }
+    .post_info{
+      display: flex;
+      >div{
+        margin-bottom: 0;
+        width: auto;
+      }
+    }
+    >p{
+      padding-right: 5rem;
+      padding-left: 5rem;
     }
   }
 }
