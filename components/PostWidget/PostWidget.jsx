@@ -2,14 +2,15 @@ import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
 import moment from 'moment';
 
-import { getRecentPosts, getRelatedPosts } from '../services';
+import styles from './PostWidget.module.scss';
+import { getRecentPosts, getRelatedPosts } from '../../services';
 
 const PostWidget = ( {categories, link} ) => {
     const [relatedPosts, setRelatedPosts] = useState([]);
 
     useEffect(() => {
         if ( link ){
-            getRelatedPosts( category, link ).then((result) => setRelatedPosts(result))
+            getRelatedPosts( categories, link ).then((result) => setRelatedPosts(result))
         } else{
             getRecentPosts().then((result) => setRelatedPosts(result))
         }
@@ -18,7 +19,8 @@ const PostWidget = ( {categories, link} ) => {
     console.log(relatedPosts)
 
     return (
-        <div>
+        <div className={styles.wrapper}>
+            <h3>{link ? 'Related Posts' : 'Recent Posts'}</h3>
             <p>PostWidget</p>
         </div>
     );
