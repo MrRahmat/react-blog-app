@@ -4,8 +4,7 @@ import Link from 'next/link';
 
 import styles from './PostCard.module.scss'
 
-const Postcard = ({ post }) => {
-    console.log(post)
+const PostCard = ({ post }) => {
     return (
         <div className={styles.post}>
             <div className={styles.post_img}>
@@ -42,4 +41,4 @@ const Postcard = ({ post }) => {
     );
 };
 
-export default Postcard;
+export default PostCard;
