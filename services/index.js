@@ -79,7 +79,7 @@ export const getRelatedPosts = async () => {
 export const getCategories = async () => {
     const query = gql`
         query getCategories{
-            categories: {
+            categories {
                 name
                 link    
             }

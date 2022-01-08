@@ -36,7 +36,6 @@ const PostWidget = ( {categories, link} ) => {
                     </div>
                 </div>
             ))}
-            <p>PostWidget</p>
         </div>
     );
 }
