@@ -1,9 +1,16 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect} from 'react';
 import Link from 'next/link';
-import styles from './Header.module.scss';
 
-const categories = [{name: 'React', slug: 'react'}, {name: 'Next', slug: 'next'}]
+import styles from './Header.module.scss';
+import {getCategories} from "../../services";
+
+
+
 const Header = () => {
+    const [ categories, setCategories ] = useState([]);
+    useEffect(() => {
+        getCategories().then(( newCategories) => setCategories( newCategories ))
+    }, []);
     return(
         <div className={styles.container}>
             <div>
