@@ -21,6 +21,21 @@ const PostWidget = ( {categories, link} ) => {
     return (
         <div className={styles.wrapper}>
             <h3>{link ? 'Related Posts' : 'Recent Posts'}</h3>
+            {relatedPosts.map(( post ) => (
+                <div key={post.title} className={styles.container}>
+                    <div className={styles.img_container}>
+                        <img width='60px' height='60px' src={post.image.url} alt={post.title}/>
+                    </div>
+                    <div className={styles.post}>
+                        <p>
+                            {moment(post.createdAt).format('MMM DD, YYYY')}
+                        </p>
+                        <Link href={`/post/${post.link}`}>
+                            {post.title}
+                        </Link>
+                    </div>
+                </div>
+            ))}
             <p>PostWidget</p>
         </div>
     );

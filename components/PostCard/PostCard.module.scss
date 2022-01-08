@@ -8,16 +8,19 @@
   .post_img{
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     padding-bottom: 20rem;
     margin-bottom: 1.5rem;
     img{
+      //margin: 1rem;
+      padding: -4%;
+      margin: 4%;
       height: 20rem;
       object-position: top;
       position: absolute;
-      width: 100%;
+      width: 92%;
       object-fit: cover;
-      box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      //box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
       border-top-left-radius: 0.5rem;
       border-top-right-radius: 0.5rem;
     }
