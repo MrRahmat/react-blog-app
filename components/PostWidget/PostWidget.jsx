@@ -16,8 +16,6 @@ const PostWidget = ( {categories, link} ) => {
         }
     }, [link])
 
-    console.log(relatedPosts)
-
     return (
         <div className={styles.wrapper}>
             <h3>{link ? 'Related Posts' : 'Recent Posts'}</h3>
