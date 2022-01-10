@@ -4,13 +4,41 @@ import styles from './PostDetails.module.scss'
 import moment from "moment";
 
 const PostDetails = ({ post }) => {
+    const getContent = ( index, text, obj, type ) => {
+        let Text = text;
+
+        if ( obj ) {
+            if ( obj.bold ) {
+                Text = ( <b key={ index }>{ text }</b> )
+            }
+            if ( obj.italic ) {
+                Text = ( <em key={ index }>{ text }</em> )
+            }
+            if ( obj.underline ) {
+                Text = ( <u key={ index }>{ text }</u> )
+            }
+        }
+
+        switch ( type ){
+            case 'heading-three':
+                return <h3 key={ index }>{ Text.map(( item, i ) => <React.Fragment key={ i }>{ item }</React.Fragment>) }</h3>
+            case 'paragraph':
+                return <p key={ index }>{ Text.map(( item, i ) => <React.Fragment key={ i }>{ item }</React.Fragment>) }</p>
+            case 'heading-four':
+                return <h4 key={ index }>{Text.map(( item, i ) => <React.Fragment key={ i }>{ item }</React.Fragment>) }</h4>
+            case 'image':
+                return <img key={index } alt={ obj.title } height={ obj.height } width={ obj.width } src={ obj.src }/>
+            default:
+                return Text
+        }
+    }
+
     return (
         <div className={styles.wrapper}>
-            PostDetails
             <div className={styles.post_img}>
                 <img src={post.image.url} alt={post.title}/>
             </div>
-            <div className={styles.post_author}>
+            <div className={styles.post}>
                 <div className={styles.post_author_img}>
                     <div>
                         <img
@@ -28,6 +56,12 @@ const PostDetails = ({ post }) => {
                         <span>{moment(post.createdAt).format('MMM DD, YYYY')}</span>
                     </div>
                 </div>
+                <h1>{post.title}</h1>
+                {post.content.raw.children.map(( typeObj, index ) => {
+                    const children = typeObj.children.map(( item, itemIndex ) => getContent( itemIndex, item.text, item ))
+
+                    return getContent( index, children, typeObj, typeObj.type )
+                })}
             </div>
         </div>
     );
