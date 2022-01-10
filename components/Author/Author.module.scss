@@ -1,0 +1,28 @@
+.container{
+  text-align: center;
+  margin-top: 5rem;
+  padding: 3rem;
+  position: relative;
+  border-radius: .5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  >div{
+    position: absolute;
+    left: 0;
+    right: 0rem;
+    top: -3rem;
+    img{
+      vertical-align: middle;
+      border-radius: 100%;
+    }
+  }
+  h3{
+    color: #fff;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  p{
+    color: #fff;
+    font-size: 1.2rem;
+  }
+}

@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../../styles/Post.module.scss';
 import {getPosts, getPostContent} from "../../services";
-import { Categories, PostWidget, PostDetails } from "../../components";
+import { Categories, PostWidget, PostDetails, Author } from "../../components";
 
 const PostContent = ({ post }) => {
     return(
@@ -10,6 +10,7 @@ const PostContent = ({ post }) => {
             <div className={styles.container}>
                 <div className={styles.main}>
                     <PostDetails post={ post }/>
+                    <Author author={ post.author }/>
                 </div>
                 <div className={styles.secondary}>
                     <div>
