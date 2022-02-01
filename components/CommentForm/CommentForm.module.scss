@@ -52,6 +52,8 @@
   }
   .button_container{
     margin-top: 2rem;
+    display: flex;
+    justify-content: center;
     button{
       display: inline-block;
       background-color: #a55353;
