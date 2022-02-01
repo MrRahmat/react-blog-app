@@ -123,6 +123,42 @@ export const getCategories = async () => {
     const result = await request(graphqlAPI, query);
     return result.categories;
 }
+export const getCategoryPost = async ( link ) => {
+    const query = gql`
+    query GetCategoryPost( $link: String! ) {
+      postsConnection(where: {categories_some: { link: $link }}) {
+        edges {
+          cursor
+          node {
+            author {
+              description
+              name
+              id
+              photo {
+                url
+              }
+            }
+            createdAt
+            link
+            title
+            excerpt
+            image {
+              url
+            }
+            categories {
+              name
+              link
+            }
+          }
+        }
+      }
+    }
+  `;
+
+    const result = await request(graphqlAPI, query, { link });
+
+    return result.postsConnection.edges;
+};
 
 export const submitComment = async ( obj ) => {
     const result = await fetch('/api/comments', {
