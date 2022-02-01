@@ -161,7 +161,8 @@ export const getCategoryPost = async ( link ) => {
 };
 
 export const submitComment = async ( obj ) => {
-    const result = await fetch('/api/comments', {
+
+    const result = await fetch('https://vercel.com/mrrahmat/react-blog-app/HEvgxsrSamccGuv1J7qHMjsLpP4y/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

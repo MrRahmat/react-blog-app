@@ -38,12 +38,12 @@
     }
   }
   .post_info{
-    display: block;
-    text-align: center;
+    display: flex;
     align-items: center;
+    width: 100%;
+    text-align: center;
     justify-content: center;
     margin-bottom: 1.2rem;
-    width: 100%;
     .post_date{
       vertical-align: middle;
       color: #585050;
