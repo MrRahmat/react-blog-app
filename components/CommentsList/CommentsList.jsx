@@ -9,7 +9,7 @@ const CommentsList = ({ link }) => {
 
     useEffect(() => {
         getComments( link ).then((res) => setComments( res ));
-    }, [])
+    }, [comments])
 
     return(
         <>
