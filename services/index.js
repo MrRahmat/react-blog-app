@@ -162,7 +162,7 @@ export const getCategoryPost = async ( link ) => {
 
 export const submitComment = async ( obj ) => {
 
-    const result = await fetch('https://react-blog-app-iota.vercel.app/api/comments', {
+    const result = await fetch('/api/comments', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
