@@ -11,7 +11,7 @@
     "graphql": "^16.1.0",
     "graphql-request": "^3.7.0",
     "html-react-parser": "^1.4.2",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "mongodb": "^4.2.1",
     "next": "12.1.0",
     "nodejs": "0.0.0",
